@@ -4,7 +4,7 @@
         <input type="text" v-model="search" placeholder="Filter">
         <div class="single-blog" v-for="blog in filteredBlogs">
             <h3 v-rainbow>{{blog.title | to-uppercase}}</h3>
-            <article>{{blog.body.slice(0,100)}}</article>
+            <article>{{blog.body | slice}}</article>
             </div>
     </div>
 </template>
@@ -34,6 +34,12 @@ export default {
             return this.blogs.filter((blog)=>{
                 return blog.title.match(this.search);
             });
+        }
+    }, 
+    //Local Registered Filters
+    filters:{
+        'slice':function(value){
+            return value.slice(0,100)+'...';
         }
     }
 }
