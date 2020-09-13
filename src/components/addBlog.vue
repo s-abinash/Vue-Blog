@@ -28,12 +28,13 @@
         </form>
         <div v-if="submitted" id="scmsg">
             <h3>Blog added succesfully</h3>
+            <center><button name="reset" v-on:click="resetData">Add a New Blog</button></center>
         </div>
-        <div id="preview" v-show="!submitted">
+        <div id="preview">
             <h3>Blog Preview</h3>
             <p><i>Blog title: </i>{{ blog.title }}</p>
             <p><i>Blog content: </i></p>
-            <p style="white-space: pre">{{ blog.content }}</p>
+            <p>{{ blog.content }}</p>
             <p><i>Categories:</i></p>
             <ul><li v-for="cat in blog.categories">{{cat}}</li></ul>
             <p><i>Author:</i>{{blog.author}}</p>
@@ -60,18 +61,18 @@ export default {
     },
     methods: {
         post(){
-            this.$http.post('https://jsonplaceholder.typicode.com/posts',
-            {title:this.blog.title,
-            body: this.blog.content,
-            userid: this.blog.author}).then(
+            this.$http.post('https://vue-blog-bd83c.firebaseio.com/posts.json',this.blog).then(
                 function(data){this.submitted=true;console.log(data);}
             );
+        },
+        resetData(){
+            this.submitted=false;
         }
     }
 }
 </script>
 
-<style>
+<style scoped>
 #add-blog *{
     box-sizing: border-box;
 }
@@ -89,13 +90,14 @@ input[type="text"], textarea{
     padding: 8px;
 }
 #preview{
-    
-    flex-wrap: wrap;
+    word-break: break-word;
+    max-width: 500px;
+    width: 500px;
     padding: 10px 20px;
     border: 1px dotted #ccc;
     margin: 30px 0;
-    width: 500px;
-    word-wrap: break-word;
+    
+    
 
 }
 h3{
@@ -113,11 +115,17 @@ select{
     width: 500px;
     height: 30px;
 }
-button{
-    display: inline-block;
+button[type="submit"]{
+    display: block;
     background-color: #00d600;
     width: 500px;
     height: 30px;
+}
+button[name="reset"]{
+    display: block;
+    background-color: #ff6262;
+    width: 300px;
+    height: 30px; 
 }
 #scmsg{
     background-color: #00f100;

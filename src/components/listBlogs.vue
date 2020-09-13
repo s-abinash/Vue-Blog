@@ -1,11 +1,11 @@
 <template>
     <div v-theme="'wide'" id="show-blogs">
-        <center><h2 >All Blog Articles</h2>
-        <input type="text" v-model="search" placeholder="Filter"></center>
+        <h2 >List Blogs</h2>
+        <input type="text" v-model="search" placeholder="Filter">
         <div class="single-blog" v-for="blog in filteredBlogs">
-            <router-link v-bind:to="'/blog/'+blog.id"><h3 v-rainbow>{{blog.title | to-uppercase}}</h3></router-link>
-            <article>{{blog.content | slice}}</article>
-        </div>
+            <h3 v-rainbow>{{blog.title | to-uppercase}}</h3>
+            
+            </div>
     </div>
 </template>
 
@@ -62,15 +62,6 @@ export default {
     margin: 20px 0;
     box-sizing: border-box;
     background: #eee;
-}
-a{
-    text-decoration: none;
-}
-input[type="text"]{
-    display: block;
-    width: 500px;
-    height: 30px;
-    
 }
 </style>
 

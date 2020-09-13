@@ -2,10 +2,35 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Blog</title>
+    <title>Vue Blog</title>
+    <link rel="icon" href="./src/assets/logo.png">
   </head>
   <body>
     <div id="app"></div>
     <script src="/dist/build.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyCzbRxqN44meMUYiW9CaGoF5JJDYd0x06o",
+    authDomain: "vue-blog-bd83c.firebaseapp.com",
+    databaseURL: "https://vue-blog-bd83c.firebaseio.com",
+    projectId: "vue-blog-bd83c",
+    storageBucket: "vue-blog-bd83c.appspot.com",
+    messagingSenderId: "577295133986",
+    appId: "1:577295133986:web:995bdf0cf7a62a6c86c97b",
+    measurementId: "G-L7BQKF09CJ"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
   </body>
 </html>
