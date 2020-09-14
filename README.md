@@ -1,12 +1,13 @@
 # Vue-Blog
-A simple Blog project in Vue.js 2 and Vue CLI 3 with a backend support Firebase Database
+A Simple Blog Application in Vue.js 2 and Vue CLI 3 with Firebase Database as a Backend
 
-Modules used:
-  -Vue Resource
-  -Vue Router
-  -Vue Mixins
+<ul>Modules used:</ul>
+  <li>-Vue Resource</li>
+  <li>-Vue Router</li>
+  <li>-Vue Mixins</li>
+</ul>
 
-## Write Permissions Disabled in Firebase*
+#### Write Permissions Disabled in Firebase*
 
 ## Build Setup
 
